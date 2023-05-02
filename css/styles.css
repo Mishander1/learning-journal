@@ -1,0 +1,201 @@
+/*  Fonts
+-----
+font-family: 'Lora', serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1em auto 1em;
+    grid-template-rows: 2em;
+    grid-template-areas:
+        ". header ."
+        "art art art"
+        ". articles ."
+        ". view-more-button."
+        "footer footer footer";
+       
+}
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1em 1.1em auto auto auto auto 1em;
+    grid-template-areas: ". icon title title home about .";
+    min-width: 577px;
+}
+.art {
+    grid-area: art;
+    display: grid;
+    grid-template-columns: 1em auto 1em;
+    grid-template-rows: 20% 1fr 1fr 1fr;
+    grid-template-areas:
+        ". ................. ."
+        ". article-date-hero ."
+        ". article-title-hero ."
+        ". article-preview-hero .";
+    margin-top: 1.8rem;
+    background: url('/img/article-image-hero.png');
+    min-width: 577px; /* You must set a specified height */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    height: 100%;
+    color: white;
+    
+}
+.articles {
+    margin-top: 2.125em;
+    grid-area: articles;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.article-listing {
+    margin-top: 2.125em;
+}
+@media(min-width: 830px){
+    body {
+        margin: 0 auto;
+        padding: 0;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 300;
+        line-height: 1.6;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1em auto 1em;
+        grid-template-rows: 2em 1fr auto;
+        grid-template-areas:
+            ". header ."
+            "art art art"
+            ". articles ."
+            ". view-more-button."
+            "footer footer footer";
+           
+    }
+    
+    .art {
+        grid-template-rows: 20% 1fr 1fr 1fr;
+        grid-template-areas:
+            ". .................. ."
+            ". article-date-hero ."
+            ". article-title-hero ."
+            ". article-preview-hero .";
+        margin-top: 1.8rem;
+        background: url('/img/blog-image-hero.png');
+        background-repeat: no-repeat; /* Do not repeat the image */
+        background-size: cover;
+        height: 100%;
+        background-position: top; /* Center the image */
+    }
+    .article-preview-hero {
+        grid-area: article-preview-hero;
+        padding-top: 0.5em;
+        padding-bottom: 3.704375em;
+        font-size: 1em;
+    }
+
+}
+
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.home,  .about {
+    margin: 1em 0 auto auto;
+    height: 1fr;
+    padding: 0;
+}
+.icon {
+    margin: 1em auto;
+    grid-area: icon;
+    font-size: 1.1rem;
+}
+.title {
+    margin: 1em auto auto 0.5em;
+    grid-area: title;
+    font-size: 1.1rem;
+}
+
+.home,  .about {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: capitalize;
+}
+
+
+.home {
+    grid-area: home;
+}
+.about {
+    grid-area: about;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.none {
+    display: none;
+}
+.article-date-hero {
+    grid-area: article-date-hero;
+    padding-top: 5.4375em;
+    font-size: 0.75em;
+}
+.article-title-hero {
+    grid-area: article-title-hero;
+    padding-top: 0.5em;
+    margin: 0;
+    font-size: 2em;
+}
+.article-preview-hero {
+    grid-area: article-preview-hero;
+    padding-top: 0.5em;
+    margin: 0;
+    font-size: 1em;
+    padding-bottom: 3.704375em;
+}
+
+.article-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.view-more-button {
+    grid-area: view-more-button;
+    margin: 1.6875em auto 2.6875em;
+    padding: 0;
+    text-decoration: underline;
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-size: 1em;    
+}
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: #202020;
+    width: 100vw;
+}
+.my-learning-journal {
+    color:#ECECEC;
+    margin: 2.3125em auto 0;
+    padding: 0;
+}
+.copyright {
+    color: #D7D7D7;
+    margin: 0 auto 2.3125em;
+    padding: 0;
+}
+

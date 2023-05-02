@@ -1,0 +1,142 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.6;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5em auto 1.5em;
+    grid-template-areas:
+        ". header ."
+        ". article-main ."
+        ". recent-posts ."
+        ". articles ."
+        ". view-more-button ."
+        "footer footer footer";
+       
+}
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1.1em auto auto auto auto;
+    grid-template-areas: " icon title title home about";
+    min-width: 577px;
+}
+.icon {
+    margin: 1em auto;
+    grid-area: icon;
+    font-size: 1.1rem;
+}
+.title {
+    margin: 1em auto auto 0.5em;
+    grid-area: title;
+    font-size: 1.1rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.home,  .about {
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: capitalize;
+    margin: 1em 0 auto auto;
+    height: 1fr;
+    padding: 0;
+}
+.home {
+    grid-area: home;
+}
+.about {
+    grid-area: about;
+}
+.article-main {
+    margin-top: 1.625em;
+    display: grid;
+    grid-area: article-main;
+    
+}
+h2 {
+    margin-top: 0;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 11.375em;
+    grid-area: avatar;
+    margin-bottom: 1.6875em;
+}
+.intro {
+    margin-bottom: 1.6875em;
+}
+
+.recent-posts {
+    grid-area: recent-posts;
+    margin: 3.1875em auto 0;
+    
+}
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1em;
+    grid-area: articles;
+    grid-template-areas: "article-listing";  
+}
+.article-listing {
+    display: grid;
+    grid-template-columns: auto;
+}
+.article-image {
+    margin-top: 2.1875em;
+    margin-bottom: 0.875em;
+    width: 100%;
+}
+.view-more-button {
+    grid-area: view-more-button;
+    margin: 1.6875em auto 2.6875em;
+    padding: 0;
+    text-decoration: underline;
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-size: 1em;    
+}
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: #202020;
+    width: 100vw;
+    margin-top: 3.5em;
+    margin-bottom: 0 auto;
+}
+.my-learning-journal {
+    color:#ECECEC;
+    margin: 2.3125em auto 0;
+    padding: 0;
+}
+.copyright {
+    color: #D7D7D7;
+    margin: 0 auto 2.3125em;
+    padding: 0;
+}
+@media(min-width: 830px){
+    .intro {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        grid-template-areas: 
+            "avatar preview"
+            "avatar article-body-preview-01";
+        
+    }
+    .avatar {
+        margin-right: 2.0625em;
+    }
+    .story {
+        margin-left: 4.25em;
+    }
+}
